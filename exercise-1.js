@@ -5,7 +5,18 @@
 
         //your code...
         function tekCamp() {}
-        // tekCamp();
+        for(let i =1; i <= 100; i++){
+            if(i % 3 == 0 && (i % 5 != 0)){
+                console.log(i,"TEK");
+            }
+            else if(i % 5 == 0 && (i % 3 != 0)){
+                console.log(i,"camp");
+            }
+            if(((i % 3 == 0)&&(i % 5 ==0))){
+                console.log(i,"TEKcamp");
+            }
+        }
+        tekCamp();
 
 
 
@@ -89,10 +100,30 @@
         /************************************************************************************/
         // Write a function that returns a car object using some given info about your car. Required inputs are the make, model, year, and color.
 
+/*const prompt = require('prompt');
         //your code...
+        var car ={
+            make: '',
+            model: '',
+            year: 0,
+            color: ''
+        };
+        prompt.start();
+        prompt.get(car, function (err, car) {
+            if (err) { return onErr(err); }
+            console.log('Command-line input received:');
+            console.log('  Username: ' + car.make);
+            console.log('  Password: ' + car.model);
+        });
+        
+        function onErr(err) {
+            console.log(err);
+            return 1;
+        }
 
 
-
+        var car = new Object();
+*/
 
 
 
@@ -112,9 +143,10 @@
         /************************************************************************************/
         const numbers = [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ];
         // Write a "for" loop that console.log()'s the first value in the  array, and every 3rd number, i.e. 0, 3, 6, 9: the zeroth, third, sixth, and ninth values.
-
         //your code...
-
+           for(let i =0; i<numbers.length;i+=3){
+                console.log(numbers[i]);
+            }
 
 
         /************************************************************************************/
@@ -127,15 +159,14 @@
 
         /************************************************************* */
         // Refactor the for() loop to be a while loop.
-
-
-        for(let i=0; i<10; i++) {
-            // console.log(" the value of i in the loop is : " + i);
+        let i = 0;
+        while( i < 10){
+       // for(let i=0; i<10; i++) {
+            console.log(" the value of i in the loop is : " + i);
+            i+=1;
         }
 
-
         //your code...
-
 
 
 
