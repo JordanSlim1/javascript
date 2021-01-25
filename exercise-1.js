@@ -13,10 +13,12 @@
         //Write a function that converts the current temperature from Fahrenheit to Celsius. 
 
         //your code...
-        function farenheitCelsius() {
-
+        function fahrenheitCelsius(f) {
+           let c = (f-32)*(5/9);
+           console.log(c.toFixed(2), "degrees C");
         }
 
+        fahrenheitCelsius(40);
 
 
 
@@ -24,11 +26,12 @@
         //Write a function that converts the Celsius temperature back to Fahrenheit. 
 
         //your code...
-        function celsiusFarenheit() {
-
+        function celsiusFahrenheit(c) {
+            let f = (c * (9/5)) + 32;
+            console.log((f.toFixed(2)), "degrees F");
         }
 
-
+        celsiusFahrenheit(40)
 
 
 
@@ -37,11 +40,18 @@
 
         //your code...
         function canVote(age) {
+            if(age>=18){
+                return true;
+            }
             return false;
         }
 
-
-
+           let v = canVote(19);
+           if(v == 1){
+               console.log("This person is old enough to vote");
+           }
+           else
+                console.log("This person is too young to vote");
 
 
 
@@ -50,12 +60,15 @@
         // Write a function that converts a string to an array. It should return an array.  
 
         //your code...
+        let wordCopy = "";
+
         function strToArr() {
-            return [];
+            let word = "jordan slim";
+            wordCopy = word.split();
+            return [...wordCopy];
         }
-
-
-
+        console.log(strToArr(wordCopy));
+       
 
 
 
@@ -64,11 +77,12 @@
         // Write a function that reverses your telephone number.  It should return the reversed telephone number.
 
         //your code...
+        let number = "8172018321";
         function reversePhone(number) {
-            
+            return [...number].reverse();
         }
 
-
+        console.log(reversePhone(number));
 
 
 
