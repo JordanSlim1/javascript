@@ -128,7 +128,8 @@
 
 
         /************************************************************************************/
-        // Write a function that accepts a list of numbers.  The function should identify each number as being even or odd.  The function should output a set of key value pairs, with the key being the number, and the value being the string "even" or "odd".
+        // Write a function that accepts a list of numbers.  The function should identify each number as being even or odd.  
+        //The function should output a set of key value pairs, with the key being the number, and the value being the string "even" or "odd".
 
         //example : [10,23,3,4] => function() => {10 : 'even', 23 : 'odd', 3 : 'odd', 4 : 'even'}
 
@@ -152,14 +153,29 @@
         /************************************************************************************/
         const foodArray = [ 'potatoes', 'tamales', 'lemon','strawberries','chocolate', 'pudding', {program : 'TEKcamp'} ];
         //access the value of the last element of the array and set it to a variable called school.  print the school variable to the console.
+            console.log(foodArray[foodArray.length - 1] = "school");
 
         const adjectiveArray = [ 'salty', 'spicy', 'sour', 'sweet', 'rich','creamy','amazing'];
         // Using both the foodArray and the adjectiveArray, write "for" loop that console.log()'s a sentence for each corresponding value in the arrays. Add the word "is" or "are" depending on if the food is singular or plural.  i.e. "Potatoes are salty", "Lemon is sour".
-
-
+        /*let i = 0;
+        let food =" ";
+        for(i = 0; i <= foodArray.length; i++){
+              // food = console.log(foodArray[i]);
+               let newFood = foodArray[i].substr(foodArray[i].length - 1);
+                if(newFood == 's'){
+                    console.log(food," are ");
+                }else{
+                    console.log(food," is ");
+                }
+                for(i; i <= adjectiveArray.length; i++){
+                   let adjective = console.log(adjectiveArray[i]);
+                break;
+                }
+            }
+*/
         /************************************************************* */
         // Refactor the for() loop to be a while loop.
-        let i = 0;
+        i = 0;
         while( i < 10){
        // for(let i=0; i<10; i++) {
             console.log(" the value of i in the loop is : " + i);
@@ -203,6 +219,22 @@
 
         const day = "friday";
 
+        switch(day){
+            case 'monday':
+                console.log("we got a long week ahead of us...");
+            case 'tuesday':
+                console.log("tuesday's are still beterr than mondays, but LONG way to go still");
+            case 'wednesday':
+                console.log("We are smack dab in the middle of the week");
+            case 'thursday':
+                console.log("Thursday night... the mood is right");
+            case 'friday':
+                console.log("TGIF.  Friday truly is the best day of the week!")
+            break;
+            default:
+                console.log("It's a weekend!")
+        }
+/*
         if(day === "monday") {
             console.log("we got a long week ahead of us...");
         } else if(day === "tuesday") {
@@ -216,25 +248,35 @@
         } else {
             console.log("It's a weekend!")
         }
-
+*/
 
 
         /************************************************************* */
         // Refactor the following statements to use ternary expressions:
 
         const age = 10;
-        if (age > 21) console.log("adult"); else {
+        var adult = age > 21 ? 'adult' : 'minor';
+        console.log(adult);
+      /*  if (age > 21) console.log("adult"); 
+        else {
             console.log("minor");
         }
-
+*/
+        var teen = age > 13 && age < 19 ? 'teen' : 'not a teenager';
+        console.log(teen);
+        /*
         if (age > 13 && age < 19) console.log('teen'); else {
             console.log("not a teenager");
         };
+*/
 
+        var working = age > 65 ? 'retired' : 'still working...';
+        console.log(working);
+        /*
         if (age > 65) console.log("retired"); else {
             console.log("still working...");
         }
-
+        */
 
         /************************************************************* */
         //Create an object literal representing yourself.  Set it equal to a variable that appropriately describes the object.  Include the following properties:
@@ -350,7 +392,10 @@
 
         const ones = [1,11,111,1111,11111,111111,1111111,11111111,111111111,1111111111];
         //reverse the array, without modifying / `mutating` the ones array.
+       let onesBackwards;
+        for(i=ones.length;i>ones.length;i--){
 
+        }
 
 
         /************************************************************* */
@@ -497,8 +542,13 @@
 
         function maxNumber(numbers) {
             //your code...
+            let max = 0;
+            for(i = 0; i > maxNumber.length;i++)
+            if(max < maxNumber[i]){
+                max = maxNumber[i];
+            }
         }
-
+        console.log(max);
         //After the numbers array has been cleaned up to only have numbers in it, Write a function that sorts the modified numbers array.  Allow the function to sort the array in descending order as well.
 
         function sortNums(numbers,desc=false) {
@@ -567,6 +617,8 @@ module.exports = {
 
 
 //*************************************** */
+
+
 
 
 
