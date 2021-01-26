@@ -132,21 +132,22 @@
 
         //your code...
       let myArr = [10, 23,3,4];
+      let obj ={};
 
-        function isEven(myArr){
+        function isEven(myArr, obj){
                 for(let i = 0; i <= myArr.length-1;i++){
                     if(myArr[i] % 2 == 0){
-                        myArr.push("even");
+                        obj[myArr[i]] = 'even';
                     }
-
+                        else{
+                            obj[myArr[i]] = 'odd';
+                        }
                     }
-                    return myArr;
+                    return myArr,obj;
                 };
                
-                isEven(myArr);
-
-
-
+                isEven(myArr, obj);
+                console.log(obj);
 
 
         /************************************************************************************/
