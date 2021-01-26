@@ -72,12 +72,13 @@
 
         //your code...
         let wordCopy = "";
+        let word = "jordan slim";
 
         function strToArr() {
-            let word = "jordan slim";
-            wordCopy = word.split();
+            wordCopy = word.split("");
             return [...wordCopy];
         }
+
         console.log(strToArr(wordCopy));
        
 
@@ -100,30 +101,26 @@
         /************************************************************************************/
         // Write a function that returns a car object using some given info about your car. Required inputs are the make, model, year, and color.
 
-/*const prompt = require('prompt');
+
         //your code...
-        var car ={
-            make: '',
-            model: '',
-            year: 0,
-            color: ''
+        function car(ml,md,yr,cl) {
+           let make= ml;
+            let model= md;
+           let year= yr;
+           let color= cl;
+
+            return{
+                _make: make,
+                _model: model,
+                _year: year,
+                _color: color
+            }
         };
-        prompt.start();
-        prompt.get(car, function (err, car) {
-            if (err) { return onErr(err); }
-            console.log('Command-line input received:');
-            console.log('  Username: ' + car.make);
-            console.log('  Password: ' + car.model);
-        });
-        
-        function onErr(err) {
-            console.log(err);
-            return 1;
-        }
+
+        var myCar = car('Honda','Pilot',2006, 'White');
+        console.log(myCar._make, myCar._model,myCar._year,myCar._color);
 
 
-        var car = new Object();
-*/
 
 
 
@@ -198,19 +195,30 @@
 
         // ex : 3 is truthy, because it is a number, and numbers are type coerced as 'true' when performing logical (boolean) operations.
 
-        // 20
-        // 0
-        // "zero";
-        // const zero = 20;
-        // null
-        // "0"
-        // !""
-        // {}
-        // () => {console.log("hello TEKcamp!");
-        // 125
-        // undefined
-        // ""
 
+        
+        // 0, false
+        console.log("Falsy because 0 literally represents false");
+        // "zero";, true
+        console.log("Truthy because all non empty strings are true");
+        //const zero = 20;
+        console.log("Truthy because the declaration is correct");
+        // null, false
+        console.log("False because null is an absence of a value");
+        // "0", true
+        console.log("Truthy because all non empty strings are true");
+        // !"", true
+        console.log("Truthy because it is NOT false, making it true");
+        // {}, true
+        console.log("Truthy because tested through an if statement, and ran back as true");
+        // () => {console.log("hello TEKcamp!");, false
+        console.log("False because there is a brace matching with a parenthesis");
+        // 125, true
+        console.log("Truthy because 125 is a number and numbers are coerced as true");
+        // undefined, false
+        console.log("Falsey because undefined means it isn't assigned");
+        // "", false
+        console.log("Falsy because empty strings are coerced as false");
 
 
 
@@ -339,18 +347,17 @@
         // Square every number in the array.  Store the squares in a new array.
 
         //your code...
-
+        const squareNums = nums.map(n => n^2);
+        console.log(squareNums);
 
 
 
 
         const fivePlus = [1,3,5,7,9,1,3,5,2,3,1,23,4,232,3,4,1,2,2,2,3,4,4,1,12,11,23,3,4,5];
         //Remove all numbers that are less than 5.  Store the results in a new array.
-
+        const lessthanfive = fivePlus.filter(n < 5);
+        console.log(lessthanfive);
         //your code...
-
-
-
 
 
 
@@ -364,7 +371,7 @@
 
         const showNums = [12,22,33,44,55,66,77,88,99,101];
         //Print out the value of each number divided by 2.  There is no need to store the output in an array.
-
+        console.log(showNums.map(n => n/2));
 
 
         /************************************************************* */
