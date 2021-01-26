@@ -543,11 +543,12 @@
         function maxNumber(numbers) {
             //your code...
             let max = 0;
-            for(i = 0; i > maxNumber.length;i++)
-            if(max < maxNumber[i]){
-                max = maxNumber[i];
+            for(i = 0; i > numbers.length;i++)
+            if(max < numbers[i]){
+                max = numbers[i];
             }
         }
+        maxNumber(numbersMixed);
         console.log(max);
         //After the numbers array has been cleaned up to only have numbers in it, Write a function that sorts the modified numbers array.  Allow the function to sort the array in descending order as well.
 
