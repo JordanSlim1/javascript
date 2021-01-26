@@ -131,8 +131,19 @@
         //example : [10,23,3,4] => function() => {10 : 'even', 23 : 'odd', 3 : 'odd', 4 : 'even'}
 
         //your code...
+      let myArr = [10, 23,3,4];
 
+        function isEven(myArr){
+                for(let i = 0; i <= myArr.length-1;i++){
+                    if(myArr[i] % 2 == 0){
+                        myArr.push("even");
+                    }
 
+                    }
+                    return myArr;
+                };
+               
+                isEven(myArr);
 
 
 
@@ -150,26 +161,28 @@
         /************************************************************************************/
         const foodArray = [ 'potatoes', 'tamales', 'lemon','strawberries','chocolate', 'pudding', {program : 'TEKcamp'} ];
         //access the value of the last element of the array and set it to a variable called school.  print the school variable to the console.
-            console.log(foodArray[foodArray.length - 1] = "school");
+        let retrieve = foodArray[foodArray.length-1];
+        let school = retrieve.program;
+       // console.log(school);
 
         const adjectiveArray = [ 'salty', 'spicy', 'sour', 'sweet', 'rich','creamy','amazing'];
         // Using both the foodArray and the adjectiveArray, write "for" loop that console.log()'s a sentence for each corresponding value in the arrays. Add the word "is" or "are" depending on if the food is singular or plural.  i.e. "Potatoes are salty", "Lemon is sour".
-        /*let i = 0;
+        let i = 0;
         let food =" ";
-        for(i = 0; i <= foodArray.length; i++){
-              // food = console.log(foodArray[i]);
-               let newFood = foodArray[i].substr(foodArray[i].length - 1);
+        function printSent(foodArray,adjectiveArray){
+            for(i = 0; i <= foodArray.length; i++){
+                let newFood = foodArray[i].sub(foodArray[i].length - 1);
                 if(newFood == 's'){
                     console.log(food," are ");
                 }else{
                     console.log(food," is ");
                 }
-                for(i; i <= adjectiveArray.length; i++){
-                   let adjective = console.log(adjectiveArray[i]);
-                break;
-                }
             }
-*/
+        }
+
+        printSent(foodArray,adjectiveArray);
+
+
         /************************************************************* */
         // Refactor the for() loop to be a while loop.
         i = 0;
@@ -188,6 +201,7 @@
         //use javascript to compute the value of the above statement. Each individual operation needs to be a function expression. run all the functions after defining them, and print the answer to the console.
 
         //your code...
+        
 
 
         /************************************************************* */
@@ -303,8 +317,23 @@
         */
 
         //your code...
-
-
+        var person = {
+            firstName: "Jordan",
+            lastName : "Slim",
+            gender       : "Female",
+            healthy: "yes",
+            hobbies: "Games, sports, hanging out",
+            profession: "TEKcamp student",
+            education: "Bachelor's degree in Comp Sci",
+                        learn : function() {
+              return (this.firstName + " " + this.lastName + " is learning JavaScript");
+            },
+                        aboutMe: function(){
+                            return("I got a " + this.education + " at UCA");
+                        }
+          };
+console.log(person.learn());
+console.log(person.aboutMe());
 
         /************************************************************* */
 
@@ -319,9 +348,12 @@
 
 
             // 1.
-            if(year > 2000 && year < 2100) {
+        /*    if(year > 2000 && year < 2100) {
                 console.log("welcome to the 21st century");
             }
+*/
+            var cent = (year > 2000) && (year < 2100) ? 'Welcome to the 21st century' : "not 21st century";
+            console.log(cent);
             
             // 2.
             for(let i=0; i<nums.length; i++) {
@@ -347,15 +379,14 @@
         // Square every number in the array.  Store the squares in a new array.
 
         //your code...
-        const squareNums = nums.map(n => n^2);
+        const squareNums = nums.map(n => n*n);
         console.log(squareNums);
-
 
 
 
         const fivePlus = [1,3,5,7,9,1,3,5,2,3,1,23,4,232,3,4,1,2,2,2,3,4,4,1,12,11,23,3,4,5];
         //Remove all numbers that are less than 5.  Store the results in a new array.
-        const lessthanfive = fivePlus.filter(n < 5);
+        const lessthanfive = fivePlus.filter(n => n < 5);
         console.log(lessthanfive);
         //your code...
 
@@ -365,14 +396,25 @@
 
         //your code...
 
+        let arr = [];
+        const arr_length = 20;
+        let arr_sum = 0;
+        function generate() {
+             for( i = 0; i < arr_length; i++){
+                arr.push(Math.floor(Math.random()*20)+1);
+             }
+             for(i=0;i < arr_length; i++){
+                 arr_sum += arr[i];
+             }
+             return arr_sum;
+         }
 
-
+            console.log(generate(arr_sum));
 
 
         const showNums = [12,22,33,44,55,66,77,88,99,101];
         //Print out the value of each number divided by 2.  There is no need to store the output in an array.
         console.log(showNums.map(n => n/2));
-
 
         /************************************************************* */
         /* Chess pieces have point values associated with them.  
