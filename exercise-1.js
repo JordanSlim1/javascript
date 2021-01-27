@@ -164,20 +164,25 @@
         //access the value of the last element of the array and set it to a variable called school.  print the school variable to the console.
         let retrieve = foodArray[foodArray.length-1];
         let school = retrieve.program;
-       // console.log(school);
+
 
         const adjectiveArray = [ 'salty', 'spicy', 'sour', 'sweet', 'rich','creamy','amazing'];
         // Using both the foodArray and the adjectiveArray, write "for" loop that console.log()'s a sentence for each corresponding value in the arrays. Add the word "is" or "are" depending on if the food is singular or plural.  i.e. "Potatoes are salty", "Lemon is sour".
         let i = 0;
         let food =" ";
         function printSent(foodArray,adjectiveArray){
-            for(i = 0; i <= foodArray.length; i++){
-                let newFood = foodArray[i].sub(foodArray[i].length - 1);
-                if(newFood == 's'){
-                    console.log(food," are ");
-                }else{
-                    console.log(food," is ");
+            for(i = 0; i < foodArray.length; i++){
+                if(typeof foodArray[i] == 'object'){
+                    console.log(foodArray[i].program," is ", adjectiveArray[i]);
                 }
+                else{
+                    let newFood = foodArray[i].substring(foodArray[i].length - 1);
+                        if(newFood == 's'){
+                             console.log(foodArray[i]," are ", adjectiveArray[i]);
+                         } else{
+                             console.log(foodArray[i]," is ",adjectiveArray[i]);
+                             }
+                    }
             }
         }
 
@@ -186,16 +191,13 @@
 
         /************************************************************* */
         // Refactor the for() loop to be a while loop.
+        //your code...
         i = 0;
         while( i < 10){
        // for(let i=0; i<10; i++) {
             console.log(" the value of i in the loop is : " + i);
             i+=1;
         }
-
-        //your code...
-
-
 
         /************************************************************* */
         //Multiply the sum of 30 added to two by 20.  Divide the product by 10 raised to the power of 2
