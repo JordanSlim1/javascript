@@ -557,54 +557,94 @@ console.log(person.aboutMe());
         // Find all devs older than 24
 
         //your code here...
-
-
+        for(i =0; i < devs.length; i++){
+        if(devs[i].age > 25){
+            console.log(devs[i].name);
+        }
+    }
 
         /************************** */  
         // Remove all people who are not developers (i.e. no tech stack)
-
         //your code here...
-
-
+        function remove(devs){
+        for(i =0; i < devs.length; i++){
+            if(devs[i].tech_stack == null){
+                console.log(devs[i].name);
+                devs.splice(i,1);
+            }
+        }
+    }
 
         /************************** */  
         // Calculate the total age of all the devs
-
         //your code here...
-
+        
+        devsAge = 0;
+        for(i =0; i < devs.length ; i++){
+            devsAge += devs[i].age;
+        }
+        console.log(devsAge);
 
 
         /************************** */  
         // Find all female devs
-
         //your code here...
-
+        for(i =0; i < devs.length - 1; i++){
+            if((devs[i].gender == 'f') || (devs[i].gender == 'F')){
+                console.log(devs[i].name);
+            }
+        }
 
         /************************** */  
         // lowercase the genders of every dev
-
         //your code here...
-
+        for(i =0; i < devs.length - 1; i++){
+            devs[i].gender.toLowerCase();
+        }
 
 
         /************************** */  
         // Sort the developers by name
-
         //your code here
-
+        devs.sort(function(a,b){
+            if(a.name < b.name){
+                return -1;
+            }
+            if(b.name < a.name){
+                return 0;;
+            }
+        });
+        console.log(devs)
 
         /************************** */  
         // Sort the devs by age in descending order
-
         //your code here
-
-
+        devs.sort(function(a,b){
+            if(a.age > b.age){
+                return -1;
+            }
+            if(b.age > a.age){
+                return 0;;
+            }
+        });
+        console.log(devs)
 
         /************************** */  
         // Sort the male coders by age
-
         //your code here
-
+        for(i = 0; i < devs.length; i++){
+            if(devs[i].gender == 'm' || devs[i].gender == 'M'){
+                 devs.sort(function(a,b){
+                        if(a.age > b.age){
+                             return -1;
+                         }
+                         if(b.age > a.age){
+                             return 0;;
+                        }
+                 });
+                 console.log(devs[i]);
+            }
+         }
 
         /************************** */  
         // For the list of devs, print out sentences including the name and tech stack of each dev, leaving out other information.  Example output is provided below : 
@@ -616,7 +656,14 @@ console.log(person.aboutMe());
         */
 
         //your code here
-
+        for(i =0; i < devs.length; i++){
+            if(devs[i].tech_stack != null){
+                console.log(devs[i].name + " " + "specializes" + " " + devs[i].tech_stack);
+            }
+            else{
+                console.log(devs[i].name + " " + "is not a developer");
+            }
+        }
 
         /************************************************************* */
         // Write a function to find the maximum numerical value of the given array.  Get rid of any non numerical values.  Convert the strings that are numbers to an actual number data type.  ("one" => 1) ("1" => 1).  Use array methods to perform this task.  
