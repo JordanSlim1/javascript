@@ -120,10 +120,6 @@
         var myCar = car('Honda','Pilot',2006, 'White');
         console.log(myCar._make, myCar._model,myCar._year,myCar._color);
 
-
-
-
-
         /************************************************************************************/
         // Write a function that accepts a list of numbers.  The function should identify each number as being even or odd.  
         //The function should output a set of key value pairs, with the key being the number, and the value being the string "even" or "odd".
@@ -204,7 +200,7 @@
         //use javascript to compute the value of the above statement. Each individual operation needs to be a function expression. run all the functions after defining them, and print the answer to the console.
 
         //your code...
-        
+
 
 
         /************************************************************* */
