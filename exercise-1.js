@@ -126,6 +126,8 @@
 
         //example : [10,23,3,4] => function() => {10 : 'even', 23 : 'odd', 3 : 'odd', 4 : 'even'}
 
+
+
         //your code...
       let myArr = [10, 23,3,4];
       let obj ={};
@@ -200,6 +202,28 @@
         //use javascript to compute the value of the above statement. Each individual operation needs to be a function expression. run all the functions after defining them, and print the answer to the console.
 
         //your code...
+        let myVar = 30;
+
+        let n = function(num){
+            return num + 2;
+        }
+         
+        let n1 = function(myVar){
+            return 20 * myVar
+        }
+
+        let n2 = function(n1){
+            return n1/10;
+        }
+
+        let res = function(n2){
+            return n2 * n2;
+        }
+
+            myVar = (n(myVar));
+            myVar = (n2(myVar));
+            myVar = (res(myVar));
+            console.log(myVar);
 
 
 
@@ -338,7 +362,7 @@ console.log(person.aboutMe());
 
         {
             const year = 2021;
-            const nums = [1,2,3,4,5];
+            const nums1 = [1,2,3,4,5];
             let sum = 0;
             let i = 0;
             const doubled = [];
@@ -355,20 +379,26 @@ console.log(person.aboutMe());
             console.log(cent);
             
             // 2.
-            for(let i=0; i<nums.length; i++) {
+           /* for(let i=0; i<nums.length; i++) {
                 sum += nums[i];
-            }
-            console.log(sum);
+            }*/
+           // console.log(sum);
+
+            console.log(nums1.reduce((a, b) => a + b));
             
             
             // 3.
-            while(i < nums.length) {
+           /* while(i < nums.length) {
                 doubled.push(nums[i]*2);
                 i++;
             }
             
             console.log(doubled);
-        }
+        }*/
+
+        doubled.push((nums1.map((a => a*2))));
+        console.log(doubled);
+    }
 
 
         /************************************************************* */
@@ -440,19 +470,23 @@ console.log(person.aboutMe());
 
         const ones = [1,11,111,1111,11111,111111,1111111,11111111,111111111,1111111111];
         //reverse the array, without modifying / `mutating` the ones array.
-       let onesBackwards;
-        for(i=ones.length;i>ones.length;i--){
-
-        }
-
+       let onesBackwards = ones.slice().reverse();
+       console.log(onesBackwards);
 
         /************************************************************* */
         //create a function called performer(cb) that takes in a callback function and runs that callback function.  The function should return the output of the callback function.
 
+        function g(){
+            console.log("Callback function");
+        }
+        
         function performer(cb) {
             //code goes here
+            console.log("Hello");
+            cb();
         }
 
+        performer(g);
 
         /************************************************************* */
         // For the given list of developers : 
@@ -588,16 +622,11 @@ console.log(person.aboutMe());
         // Write a function to find the maximum numerical value of the given array.  Get rid of any non numerical values.  Convert the strings that are numbers to an actual number data type.  ("one" => 1) ("1" => 1).  Use array methods to perform this task.  
         const numbersMixed = [2,23,1,2,1,1,1,2,2.5,20,200,2000,,{k:"val"},20000,19999,1878,140,23,4,"sk",true,true,"true-dat","nice","one","two","three","3","tea",[]];
 
-        function maxNumber(numbers) {
+      function maxNumber(numbers) {
             //your code...
-            let max = 0;
-            for(i = 0; i > numbers.length;i++)
-            if(max < numbers[i]){
-                max = numbers[i];
-            }
-        }
-        maxNumber(numbersMixed);
-        console.log(max);
+      };
+
+
         //After the numbers array has been cleaned up to only have numbers in it, Write a function that sorts the modified numbers array.  Allow the function to sort the array in descending order as well.
 
         function sortNums(numbers,desc=false) {
@@ -665,9 +694,5 @@ module.exports = {
 }
 
 
-//*************************************** */
-
-
-
-
-
+/*************************************** */
+        
