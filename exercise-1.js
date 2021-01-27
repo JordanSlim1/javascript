@@ -170,7 +170,7 @@
         let food =" ";
         function printSent(foodArray,adjectiveArray){
             for(i = 0; i < foodArray.length; i++){
-                if(typeof foodArray[i] == 'object'){
+                if(typeof foodArray[i] === 'object'){
                     console.log(foodArray[i].program," is ", adjectiveArray[i]);
                 }
                 else{
@@ -458,13 +458,29 @@ console.log(person.aboutMe());
         ['android'] => chessCalc() => null
 
         */
-
-        function chessCalc(pieces) {
-            //your code here
+     function chessCalc(pieces) {
+         let tot = 0;
+         for(i = 0; i < pieces.length - 1; i++){
+             if(pieces[i] == 'Pawn'){
+                 tot = tot + 1;
+             }else if(pieces[i] == 'Rook'){
+                tot = tot + 5;
+            }
+             else if(pieces[i] == 'Bishop'){
+                tot = tot + 3;
+            }else if(pieces[i] == 'Knight'){
+                tot = tot + 3;
+            }else if(pieces[i] == 'Queen'){
+                tot = tot + 9;
+            }else if(pieces[i] == 'King'){
+                tot = tot + 0;
+            }else{
+                tot = tot + 0;
+            }
         }
-
-
-
+         console.log(tot);
+     }
+     chessCalc(["Rook","Queen","King"])
 
         /************************************************************* */
 
@@ -671,9 +687,29 @@ console.log(person.aboutMe());
 
       function maxNumber(numbers) {
             //your code...
+            let max = 0;
+            for(let i = 0; i < numbers.length; i++){
+                    if(typeof number[i] != 'number'){
+                        if(typeof numbers[i] == 'object'){
+                            console.log(numbers[i]);
+                            numbers.splice(i,1);
+                        }
+                        else if(numbers[i] == null){
+                            numbers.splice(i,1);
+                        }
+                        else if(numbers[i] == true){
+                            numbers.splice(i,1);
+                        }
+                        else{
+                        parseInt(numbers[i]);
+                        }                   
+                    }
+                    max = Math.max(...numbers);
+            }
+            return max;
       };
 
-
+      console.log(maxNumber(numbersMixed));
         //After the numbers array has been cleaned up to only have numbers in it, Write a function that sorts the modified numbers array.  Allow the function to sort the array in descending order as well.
 
         function sortNums(numbers,desc=false) {
@@ -685,16 +721,19 @@ console.log(person.aboutMe());
         /************************************************************* */
         //Research a new feature of ES6+ and create an example of it's use case here.  Be sure to write comments explaining what the feature is and why it is useful.
 
-
+        const myAge = 23;
             //your code...
-
+            console.log(`I am ${myAge}`);
+            //This is a template literal. It is useful in the sense that you don't have to
+            //concatenate but instead us back tick marks with a dollar sign with curly to
+            //print out what you want
 
 
         /************************************************************* */
         //Add an example of the 5 primary JavaScript data types to the given mapObj.  The key is an example data type, and the value is the name of the data type.  An object data type has already been set as the 1st key / val pair.
 
         const mapObj = new Map();
-        mapObj.set({company : "TEKsystems"},"object");
+        mapObj.set({company : "TEKsystems"},"object", 7, 'number', true, "boolean", "Hello", "String");
 
         console.log(mapObj.has({company : "TEKsystems"}));
 
@@ -718,21 +757,41 @@ console.log(person.aboutMe());
 
 
         /************************************************************* */
-        //- Create a Higher Order Function called multiple(x) that takes a single parameter.  This HOF should return another function fn(y) that accepts another single parameter y.  This inner function should compute the product of it's parameter with the parameter passed into multiple.  Use this returned "first-class" function to compute triples of any given number.
+        //Create a Higher Order Function called multiple(x) that takes a single parameter. 
+        //This HOF should return another function fn(y) that accepts another single parameter y.  
+        //This inner function should compute the product of it's parameter with the parameter passed into multiple.  
+        //Use this returned "first-class" function to compute triples of any given number.
 
         //your code...
+       let calc = function multiple(x){
+            return function fn(y){
+                return y*x;
+            }
+        }
+        calc * 3;
 
-
-        //- Write an outer function called stockGain that has cost basis (basis) as a parameter; declare a variable called message that holds " is how much the stock has increased".  Return an inner function with years (yrs) as a parameter and declare a variable for growth rate (r) of 5%. Console log your calculation.
-
+        //- Write an outer function called stockGain that has cost basis (basis) as a parameter; 
+        //declare a variable called message that holds " is how much the stock has increased".  
+        //Return an inner function with years (yrs) as a parameter and declare a variable for 
+        //growth rate (r) of 5%. Console log your calculation.
         //your code
+        function stockGain(basis){
+            let msg = " is how much the stock has increased";
+             return function(yrs){
+                let  r = .05;
+                r = r * yrs;
+                return basis * r;
+            }
+        }
 
 
-        // Once finished, declare a variable called futureValue that holds your stockGain function and enter any amount for the cost basis and a number for the number of years.  Run the function returned by the higher order function to display the future value of the stock.  
-
+        // Once finished, declare a variable called futureValue that holds your stockGain function 
+        //and enter any amount for the cost basis and a number for the number of years.  
+        //Run the function returned by the higher order function to display the future value of 
+        //the stock.  
         //your code...
 
-
+        console.log(stockGain(100));
 
 // DO NOT DELETE THIS EXPORT
 module.exports = {
