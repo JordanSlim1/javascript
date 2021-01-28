@@ -215,12 +215,12 @@
             return 20 * myVar
         }
 
-        let n2 = function(){
-            return 10 * 10;
+        let n2 = function(n1){
+            return n1/10;
         }
 
         let res = function(n1){
-            return n1/n2;
+            return n1 * n1;
         }
 
             myVar = (n(myVar));
@@ -757,19 +757,31 @@ for(i = 0; i < numbersMixed.length - 1; i++){
         // An object data type has already been set as the 1st key / val pair.
 
         const mapObj = new Map();
-        mapObj.set({company : "TEKsystems"},"object", 7, 'number', true, "boolean", "Hello", "String");
+        mapObj.set('{company : "TEKsystems"}',"object");
+        mapObj.set(7, 'number');
+        mapObj.set(true, "boolean");
+        mapObj.set("Hello", "string");
+        mapObj.set("[]]", "array");
 
         console.log(mapObj.has({company : "TEKsystems"}));
+        //This returns false because for a map, the key of the pair has to be in quotes
 
         //The above console.log() statmeent returns false.  
         //Write another console.log() statement explaining why this line of code prints false. 
         // Refactor the code `mapObj.set()`, so the code : `mapObj.has() returns true.  
         //The goal is to successfully check and see if {company : "TEKsystems"} exists in the mapObj.
         //your code...
+        console.log(mapObj.has('{company : "TEKsystems"}'));
 
+        //loop through the mapObj and create a new array of only the data types, 
+        //leaving out the example keys of the mapObj.  Use array methods to do this.  
+        //\Example output : ['string',number','boolean',array','object']
+        let myArray = [];
 
-        //loop through the mapObj and create a new array of only the data types, leaving out the example keys of the mapObj.  Use array methods to do this.  Example output : ['string',number','boolean',array','object']
-
+            for (let [key, value] of mapObj) {
+                myArray.push([value]);
+                }
+                console.log(myArray[0],myArray[1],myArray[2],myArray[3],myArray[4]);
 
         /************************************************************* */
         //Create 4 mathematical function expressions, add,subtract,multiply,divide.  
@@ -779,9 +791,27 @@ for(i = 0; i < numbersMixed.length - 1; i++){
         //The doMath() function should return the computed value of any operation performed.
 
         // ex : 2,3 => doMath(2,3) => adding : 5
-        const operations = [];
-        function doMath(x,y) {};
+        const operations = [
+            function add(x,y) {
+                return x + y;
+            },
+            function sub(x,y){
+                return x - y;
+             },
+             function mult(x,y){
+                return x * y;
+            },
+            function div(x,y){
+                return x / y;
+            }
+        ];
 
+        function doMath(x,y) {
+               return (operations[(Math.floor(Math.random()*3)+1)](2,3));
+                return arr[x,y];
+        };
+            console.log(doMath());
+        
         //your code...
 
 
