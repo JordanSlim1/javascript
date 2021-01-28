@@ -198,9 +198,12 @@
         }
 
         /************************************************************* */
-        //Multiply the sum of 30 added to two by 20.  Divide the product by 10 raised to the power of 2
-        //use javascript to compute the value of the above statement. Each individual operation needs to be a function expression. run all the functions after defining them, and print the answer to the console.
-
+        //Multiply the sum of 30 added to two by 20.  
+        //Divide the product by 10 raised to the power of 2
+        //use javascript to compute the value of the above statement. 
+        //Each individual operation needs to be a function expression. 
+        //run all the functions after defining them, and print the answer to the console.
+        //(((30 + 2) * 20)/10)2??
         //your code...
         let myVar = 30;
 
@@ -212,12 +215,12 @@
             return 20 * myVar
         }
 
-        let n2 = function(n1){
-            return n1/10;
+        let n2 = function(){
+            return 10 * 10;
         }
 
-        let res = function(n2){
-            return n2 * n2;
+        let res = function(n1){
+            return n1/n2;
         }
 
             myVar = (n(myVar));
@@ -226,14 +229,10 @@
             console.log(myVar);
 
 
-
         /************************************************************* */
         //Determine whether the following values are "truthy" or "falsy".  console.log() the value, whether the value is 'truthy' or 'falsy', along with your reasoning why using String interpolation values : 
 
         // ex : 3 is truthy, because it is a number, and numbers are type coerced as 'true' when performing logical (boolean) operations.
-
-
-        
         // 0, false
         console.log("Falsy because 0 literally represents false");
         // "zero";, true
@@ -685,31 +684,54 @@ console.log(person.aboutMe());
         // Write a function to find the maximum numerical value of the given array.  Get rid of any non numerical values.  Convert the strings that are numbers to an actual number data type.  ("one" => 1) ("1" => 1).  Use array methods to perform this task.  
         const numbersMixed = [2,23,1,2,1,1,1,2,2.5,20,200,2000,,{k:"val"},20000,19999,1878,140,23,4,"sk",true,true,"true-dat","nice","one","two","three","3","tea",[]];
 
-      function maxNumber(numbers) {
+
+for(i =0; i < numbersMixed.length -1; i++){
+    if(typeof numbersMixed[i] != 'number'){
+        if(typeof numbersMixed[i] == 'string'){
+            if ((numbersMixed[i] == "one") || (numbersMixed[i] == "two") || (numbersMixed[i] == "three")){
+                if(numbersMixed[i] == "one")
+                    numbersMixed[i] = 1;
+                    if(numbersMixed[i] == "two")
+                        numbersMixed[i] = 2;
+                        if(numbersMixed[i] == "three")
+                            numbersMixed[i] = 3;
+            }else{
+                numbersMixed.splice(i,1);
+            }
+        }
+        if(typeof numbersMixed[i] === 'object'){
+            console.log(numbersMixed[i]);
+            numbersMixed.splice(i,1);
+        }
+        else if(numbersMixed[i] == null){
+            numbersMixed.splice(i,1);
+        }
+        else if(typeof numbersMixed[i] == 'boolean'){
+            numbersMixed.splice(i,1);
+        }
+        else{
+            numbersMixed.splice(i,1);
+        }                   
+    }else{
+        parseInt(numbersMixed[i]);
+    }
+}
+
+
+for(i = 0; i < numbersMixed.length - 1; i++){
+    console.log(numbersMixed[i]);
+}
+        function maxNumber(numbers) {
             //your code...
             let max = 0;
-            for(let i = 0; i < numbers.length; i++){
-                    if(typeof number[i] != 'number'){
-                        if(typeof numbers[i] == 'object'){
-                            console.log(numbers[i]);
-                            numbers.splice(i,1);
-                        }
-                        else if(numbers[i] == null){
-                            numbers.splice(i,1);
-                        }
-                        else if(numbers[i] == true){
-                            numbers.splice(i,1);
-                        }
-                        else{
-                        parseInt(numbers[i]);
-                        }                   
-                    }
+            for(let i = 0; i < numbers.length - 1; i++){ 
                     max = Math.max(...numbers);
             }
             return max;
       };
 
       console.log(maxNumber(numbersMixed));
+
         //After the numbers array has been cleaned up to only have numbers in it, Write a function that sorts the modified numbers array.  Allow the function to sort the array in descending order as well.
 
         function sortNums(numbers,desc=false) {
@@ -730,15 +752,19 @@ console.log(person.aboutMe());
 
 
         /************************************************************* */
-        //Add an example of the 5 primary JavaScript data types to the given mapObj.  The key is an example data type, and the value is the name of the data type.  An object data type has already been set as the 1st key / val pair.
+        //Add an example of the 5 primary JavaScript data types to the given mapObj. 
+        // The key is an example data type, and the value is the name of the data type. 
+        // An object data type has already been set as the 1st key / val pair.
 
         const mapObj = new Map();
         mapObj.set({company : "TEKsystems"},"object", 7, 'number', true, "boolean", "Hello", "String");
 
         console.log(mapObj.has({company : "TEKsystems"}));
 
-        //The above console.log() statmeent returns false.  Write another console.log() statement explaining why this line of code prints false.  Refactor the code `mapObj.set()`, so the code : `mapObj.has() returns true.  The goal is to successfully check and see if {company : "TEKsystems"} exists in the mapObj.
-
+        //The above console.log() statmeent returns false.  
+        //Write another console.log() statement explaining why this line of code prints false. 
+        // Refactor the code `mapObj.set()`, so the code : `mapObj.has() returns true.  
+        //The goal is to successfully check and see if {company : "TEKsystems"} exists in the mapObj.
         //your code...
 
 
@@ -746,7 +772,11 @@ console.log(person.aboutMe());
 
 
         /************************************************************* */
-        //Create 4 mathematical function expressions, add,subtract,multiply,divide.  put them in an array, and create a doMath() function that randomly selects one of the mathematical operations whenever it is invoked.  The doMath() function should print to the console the mathetmatical function that was carried out.  The doMath() function should return the computed value of any operation performed.
+        //Create 4 mathematical function expressions, add,subtract,multiply,divide.  
+        //put them in an array, and create a doMath() function that randomly selects one of 
+        //the mathematical operations whenever it is invoked.  The doMath() function should 
+        //print to the console the mathetmatical function that was carried out.  
+        //The doMath() function should return the computed value of any operation performed.
 
         // ex : 2,3 => doMath(2,3) => adding : 5
         const operations = [];
@@ -763,35 +793,29 @@ console.log(person.aboutMe());
         //Use this returned "first-class" function to compute triples of any given number.
 
         //your code...
-       let calc = function multiple(x){
-            return function fn(y){
-                return y*x;
-            }
-        }
-        calc * 3;
+        const multiple = x => y => x* y;
+       console.log(multiple(3)(2));
 
         //- Write an outer function called stockGain that has cost basis (basis) as a parameter; 
         //declare a variable called message that holds " is how much the stock has increased".  
         //Return an inner function with years (yrs) as a parameter and declare a variable for 
         //growth rate (r) of 5%. Console log your calculation.
         //your code
-        function stockGain(basis){
-            let msg = " is how much the stock has increased";
-             return function(yrs){
-                let  r = .05;
-                r = r * yrs;
-                return basis * r;
-            }
-        }
 
+       const futureValue = function stockGain(basis){
+            const msg = " is how much the stock has increased";
+             return function(yrs){
+                const growth = 0.05;
+                return basis * (yrs*growth) + msg;
+             }
+        }
 
         // Once finished, declare a variable called futureValue that holds your stockGain function 
         //and enter any amount for the cost basis and a number for the number of years.  
         //Run the function returned by the higher order function to display the future value of 
         //the stock.  
         //your code...
-
-        console.log(stockGain(100));
+        console.log(futureValue(100)(7));
 
 // DO NOT DELETE THIS EXPORT
 module.exports = {
