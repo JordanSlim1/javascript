@@ -685,42 +685,39 @@ console.log(person.aboutMe());
         const numbersMixed = [2,23,1,2,1,1,1,2,2.5,20,200,2000,,{k:"val"},20000,19999,1878,140,23,4,"sk",true,true,"true-dat","nice","one","two","three","3","tea",[]];
 
 
-for(i =0; i < numbersMixed.length -1; i++){
-    if(typeof numbersMixed[i] != 'number'){
-        if(typeof numbersMixed[i] == 'string'){
-            if ((numbersMixed[i] == "one") || (numbersMixed[i] == "two") || (numbersMixed[i] == "three")){
-                if(numbersMixed[i] == "one")
+for(i =0; i < numbersMixed.length - 1; i++){
+    if(typeof numbersMixed[i] == 'string'){
+            if ((numbersMixed[i] == 'one') || (numbersMixed[i] == 'two') || (numbersMixed[i] == 'three')){
+                if(numbersMixed[i] == "one"){
                     numbersMixed[i] = 1;
-                    if(numbersMixed[i] == "two")
+                }
+                else if(numbersMixed[i] == "two"){
                         numbersMixed[i] = 2;
-                        if(numbersMixed[i] == "three")
+                    }
+                else if((numbersMixed[i] == 'three') || (numbersMixed[i] == '3')){
                             numbersMixed[i] = 3;
+                        }
+                        else if((numbersMixed[i] == "3")){
+                            numbersMixed[i] = 3;
+                        }
             }else{
+                if((numbersMixed[i] == 'tea') || (numbersMixed[i] == 'sk') || (numbersMixed[i] == 'true-dat') || (numbersMixed[i] === 'nice')){
+                    numbersMixed.splice(i,1);
+                    i = 0;
+                }
+                }
+            }
+            else if((typeof numbersMixed[i] == 'object') || (typeof numbersMixed[i] == '[]' )){
                 numbersMixed.splice(i,1);
+                i = 0;
+            }
+            else if((numbersMixed[i] == null) || (numbersMixed[i] == true)){
+                numbersMixed.splice(i,1);
+                i = 0;
             }
         }
-        if(typeof numbersMixed[i] === 'object'){
-            console.log(numbersMixed[i]);
-            numbersMixed.splice(i,1);
-        }
-        else if(numbersMixed[i] == null){
-            numbersMixed.splice(i,1);
-        }
-        else if(typeof numbersMixed[i] == 'boolean'){
-            numbersMixed.splice(i,1);
-        }
-        else{
-            numbersMixed.splice(i,1);
-        }                   
-    }else{
-        parseInt(numbersMixed[i]);
-    }
-}
 
 
-for(i = 0; i < numbersMixed.length - 1; i++){
-    console.log(numbersMixed[i]);
-}
         function maxNumber(numbers) {
             //your code...
             let max = 0;
@@ -730,15 +727,20 @@ for(i = 0; i < numbersMixed.length - 1; i++){
             return max;
       };
 
-      console.log(maxNumber(numbersMixed));
+      console.log("Max is " + maxNumber(numbersMixed));
 
         //After the numbers array has been cleaned up to only have numbers in it, Write a function that sorts the modified numbers array.  Allow the function to sort the array in descending order as well.
 
         function sortNums(numbers,desc=false) {
             //your code...
+            if(desc = true){
+               return numbers.sort(function(a, b){return b-a});
+            }else{
+                numbers.sort(function(a, b){return a-b});
+            }
         };
 
-
+        console.log("Max is " + sortNums(numbersMixed));
 
         /************************************************************* */
         //Research a new feature of ES6+ and create an example of it's use case here.  Be sure to write comments explaining what the feature is and why it is useful.
