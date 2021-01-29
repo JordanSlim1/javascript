@@ -5,9 +5,9 @@
    const input = document.querySelector('input'); 
    const btn = document.querySelector('button'); 
 
-   // 2. Create a function that will run in response to the button being clicked.
-    btn.onclick = function(){
-
+      // 2. Create a function that will run in response to the button being clicked.
+      btn.addEventListener("click", addItems);
+      function addItems(){
       //  3. Inside the function body, start off by storing the current value of the input element in a variable.
         let item = input.value;
 
@@ -31,8 +31,9 @@
         list.appendChild(listItem);
 
         //  9. Attach an event handler to the delete button, so that when clicked it will delete the entire list item it is inside.
-        listBtn.onclick = function (e) {
-            list.removeChild(listItem);
+        listBtn.addEventListener("click", deleteItem);
+        function deleteItem(i){
+          list.removeChild(listItem);
         }
           //  10. Finally, use the focus() method to focus the input element ready for entering the next shopping list item.
           input.focus();

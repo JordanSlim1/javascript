@@ -11,3 +11,6 @@ document.getElementById("restart").addEventListener("click", restartTime());
 function startTime(){}
 function stopTime(){}
 function restartTime(){}
+
+//set interval
+//set timeout 
