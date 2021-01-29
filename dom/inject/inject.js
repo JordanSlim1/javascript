@@ -38,6 +38,7 @@ var para2 = document.createElement('p');
 var bottomhead = document.createElement('h1');
 var italy = document.createElement('i');
 
+
 var head1 = document.createElement('h1');
 divTag.appendChild(cent);
 cent.appendChild(head1);
@@ -70,10 +71,11 @@ divTag.appendChild(para2);
 para2.textContent = 'My instructor’s email address is:'
 
 para2.appendChild(link2);
-link2.textContent = 'ayunas@teksystems.com';
+link2.textContent = ' ayunas@teksystems.com';
 link2.setAttribute('href', 'ayunas@teksystems.com');
 
 divTag.appendChild(bottomhead);
 bottomhead.textContent = 'Have a great day!';
 
-divTag.appendChild= 'I really look forward to learning how to code!  Have a great day.  ';
+divTag.append('I really look forward to learning how to code!  Have a great day.  ');
+divTag.append('-[Team "Giter Done"]');
